@@ -33,7 +33,9 @@ import { UploadModule } from './upload/upload.module';
         database: config.get<string>('DB_NAME'),
         entities: [User, Biodata, Favorite, ProfileView],
         autoLoadEntities: true,
-        synchronize: true,
+        synchronize: false, // Disabled - using migrations instead
+        migrations: ['dist/migrations/*.js'],
+        migrationsRun: false, // Set to true if you want auto-run migrations on startup
       }),
     }),
     UserModule,
