@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "nest build",
-    "start": "npm run migration:run && nest start",
+    "start": "npm run migration:run && npm run seed && nest start",
     "dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",

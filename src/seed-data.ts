@@ -16,44 +16,45 @@ async function seedDatabase() {
 
     console.log('🌱 Seeding initial users...');
 
-    // Hash passwords
-    const hashedPassword = await bcrypt.hash('123456', 10);
+
+
+    // Hash specific passwords for each user
+    const superadminPassword = await bcrypt.hash('superadmin', 10);
+    const adminPassword = await bcrypt.hash('aaaaa', 10);
+    const userPassword = await bcrypt.hash('12345', 10);
 
     // Create superadmin user
     await AppDataSource.query(`
-      INSERT INTO "user" ("fullName", "username", "email", "password", "mobile", "role", "createdAt", "updatedAt")
-      VALUES ($1, $2, $3, $4, $5, $6, NOW(), NOW())
+      INSERT INTO "user" ("fullName", "email", "password", "mobile", "role", "createdAt", "updatedAt")
+      VALUES ($1, $2, $3, $4, $5, NOW(), NOW())
     `, [
       'Super Admin',
-      'superadmin',
       'razibmahmud50@gmail.com',
-      hashedPassword,
+      superadminPassword,
       '01700000000',
       'superadmin'
     ]);
 
     // Create admin user
     await AppDataSource.query(`
-      INSERT INTO "user" ("fullName", "username", "email", "password", "mobile", "role", "createdAt", "updatedAt")
-      VALUES ($1, $2, $3, $4, $5, $6, NOW(), NOW())
+      INSERT INTO "user" ("fullName", "email", "password", "mobile", "role", "createdAt", "updatedAt")
+      VALUES ($1, $2, $3, $4, $5, NOW(), NOW())
     `, [
       'Admin User',
-      'admin',
-      'admin@example.com',
-      hashedPassword,
+      'testadmin@example.com',
+      adminPassword,
       '01900000000',
       'admin'
     ]);
 
     // Create test user
     await AppDataSource.query(`
-      INSERT INTO "user" ("fullName", "username", "email", "password", "mobile", "role", "createdAt", "updatedAt")
-      VALUES ($1, $2, $3, $4, $5, $6, NOW(), NOW())
+      INSERT INTO "user" ("fullName", "email", "password", "mobile", "role", "createdAt", "updatedAt")
+      VALUES ($1, $2, $3, $4, $5, NOW(), NOW())
     `, [
       'Test User',
-      'testuser',
       'user@example.com',
-      hashedPassword,
+      userPassword,
       '01800000000',
       'user'
     ]);
