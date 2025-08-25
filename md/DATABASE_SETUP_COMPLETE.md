@@ -25,9 +25,9 @@ Your Finder API database has been successfully organized and migrated!
 
 | Role | Email | Mobile | Password |
 |------|-------|--------|----------|
-| Super Admin | razibmahmud50@gmail.com | 01700000000 | **superadmin** |
-| Admin | testadmin@example.com | 01900000000 | **aaaaa** |
-| User | user@example.com | 01800000000 | **12345** |
+| Super Admin | superadmin@finder.com | 01700000000 | **Testpass@50** |
+| Admin | admin@finder.com | 01900000000 | **Testpass@50** |
+| User | user@finder.com | 01800000000 | **Testpass@50** |
 
 ## 📋 Available Commands
 

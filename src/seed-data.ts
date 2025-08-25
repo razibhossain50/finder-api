@@ -18,10 +18,10 @@ async function seedDatabase() {
 
 
 
-    // Hash specific passwords for each user
-    const superadminPassword = await bcrypt.hash('superadmin', 10);
-    const adminPassword = await bcrypt.hash('aaaaa', 10);
-    const userPassword = await bcrypt.hash('12345', 10);
+    // Hash specific passwords for each user (all use Testpass@50)
+    const superadminPassword = await bcrypt.hash('Testpass@50', 10);
+    const adminPassword = await bcrypt.hash('Testpass@50', 10);
+    const userPassword = await bcrypt.hash('Testpass@50', 10);
 
     // Create superadmin user
     await AppDataSource.query(`
@@ -29,7 +29,7 @@ async function seedDatabase() {
       VALUES ($1, $2, $3, $4, $5, NOW(), NOW())
     `, [
       'Super Admin',
-      'razibmahmud50@gmail.com',
+      'superadmin@finder.com',
       superadminPassword,
       '01700000000',
       'superadmin'
@@ -41,7 +41,7 @@ async function seedDatabase() {
       VALUES ($1, $2, $3, $4, $5, NOW(), NOW())
     `, [
       'Admin User',
-      'testadmin@example.com',
+      'admin@finder.com',
       adminPassword,
       '01900000000',
       'admin'
@@ -53,16 +53,16 @@ async function seedDatabase() {
       VALUES ($1, $2, $3, $4, $5, NOW(), NOW())
     `, [
       'Test User',
-      'user@example.com',
+      'user@finder.com',
       userPassword,
       '01800000000',
       'user'
     ]);
 
     console.log('✅ Successfully seeded initial users:');
-    console.log('  - Super Admin: razibmahmud50@gmail.com / 01700000000 (password: superadmin)');
-    console.log('  - Admin: testadmin@example.com / 01900000000 (password: aaaaa)');
-    console.log('  - Test User: user@example.com / 01800000000 (password: 12345)');
+    console.log('  - Super Admin: superadmin@finder.com / 01700000000 (password: Testpass@50)');
+    console.log('  - Admin: admin@finder.com / 01900000000 (password: Testpass@50)');
+    console.log('  - User: user@finder.com / 01800000000 (password: Testpass@50)');
 
   } catch (error) {
     console.error('❌ Seeding failed:', error);

@@ -3,21 +3,21 @@
 ## Working User Accounts
 
 ### Super Admin
-- **Email**: razibmahmud50@gmail.com
+- **Email**: superadmin@finder.com
 - **Mobile**: 01700000000
-- **Password**: `superadmin`
+- **Password**: `Testpass@50`
 - **Role**: superadmin
 
 ### Admin User  
-- **Email**: testadmin@example.com
+- **Email**: admin@finder.com
 - **Mobile**: 01900000000
-- **Password**: `aaaaa`
+- **Password**: `Testpass@50`
 - **Role**: admin
 
 ### Regular User
-- **Email**: user@example.com
+- **Email**: user@finder.com
 - **Mobile**: 01800000000  
-- **Password**: `12345`
+- **Password**: `Testpass@50`
 - **Role**: user
 
 ## Authentication Methods
@@ -31,9 +31,9 @@ Your app supports multiple authentication methods:
 ## Admin Login
 
 For admin panel access, use the admin login endpoint with:
-- **testadmin@example.com** / `aaaaa` (admin role)
-- **razibmahmud50@gmail.com** / `superadmin` (superadmin role)
+- **admin@finder.com** / `Testpass@50` (admin role)
+- **superadmin@finder.com** / `Testpass@50` (superadmin role)
 
 ---
 
-**Note**: These are the actual working passwords as set by the `createSuperAdmin()` method in your AuthService.
+**Note**: These credentials are created by the seed script (`src/seed-data.ts`).

@@ -40,9 +40,9 @@ The database migration issue has been **completely resolved**. Here's what was a
 ## 👥 Seed Data Loaded
 
 All test users created successfully:
-- **Super Admin**: razibmahmud50@gmail.com (password: superadmin)
-- **Admin**: testadmin@example.com (password: aaaaa)  
-- **User**: user@example.com (password: 12345)
+- **Super Admin**: superadmin@finder.com (password: Testpass@50)
+- **Admin**: admin@finder.com (password: Testpass@50)  
+- **User**: user@finder.com (password: Testpass@50)
 
 ## 🚀 Application Status
 
@@ -58,7 +58,7 @@ All test users created successfully:
 - `src/migrations/001_initial_schema.ts` - Complete database schema
 
 ### Updated Files:
-- `src/seed-data.ts` - Removed username references
+- `src/seed-data.ts` - Seeds three default users with bcrypt-hashed passwords
 - `src/polyfills.ts` - Added crypto compatibility
 - `src/user/user.entity.ts` - Proper enum types
 - Various documentation files

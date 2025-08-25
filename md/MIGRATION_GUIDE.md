@@ -12,9 +12,8 @@ npm run setup
 
 This will:
 1. Install dependencies
-2. Build the project
-3. Run all migrations
-4. Seed initial data
+2. Run all migrations
+3. Seed initial data
 
 ## Manual Migration Commands
 
@@ -53,7 +52,6 @@ npm run seed
 All migrations are located in `src/migrations/` and follow TypeORM's migration interface:
 
 - `001_initial_schema.ts` - Creates all base tables (users, biodata, favorites, profile_views)
-- `002_add_biodata_approval_system.ts` - Adds the two-column approval system for biodata
 
 ## Default Accounts
 
@@ -61,21 +59,13 @@ After seeding, these accounts will be available:
 
 | Role | Email | Mobile | Password |
 |------|-------|--------|----------|
-| Super Admin | razibmahmud50@gmail.com | 01700000000 | 123456 |
-| Admin | admin@example.com | 01900000000 | 123456 |
-| User | user@example.com | 01800000000 | 123456 |
+| Super Admin | superadmin@finder.com | 01700000000 | Testpass@50 |
+| Admin | admin@finder.com | 01900000000 | Testpass@50 |
+| User | user@finder.com | 01800000000 | Testpass@50 |
 
 ## Database Configuration
 
-Update your `.env` file with your database credentials:
-
-```env
-DB_HOST=localhost
-DB_PORT=5432
-DB_USER=postgres
-DB_PASS=your_password
-DB_NAME=Finder
-```
+Configure your database credentials in `src/data-source.ts`.
 
 ## Important Notes
 
