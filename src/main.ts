@@ -24,8 +24,12 @@ async function bootstrap() {
   }));
 
   // Enable CORS for the frontend application
+  // Allow both local and deployed frontend origins, configurable via env
+  const allowedOrigins = [
+    process.env.FRONTEND_URL || 'http://localhost:3000',
+  ];
   app.enableCors({
-    origin: 'http://localhost:3000',
+    origin: allowedOrigins,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     allowedHeaders: 'Content-Type, Authorization',
     credentials: true,
