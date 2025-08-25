@@ -23,6 +23,9 @@ async function bootstrap() {
     transform: true,
   }));
 
+  // Set global prefix for all routes
+  app.setGlobalPrefix('api');
+
   // Enable CORS for the frontend application
   // Allow both local and deployed frontend origins, configurable via env
   const allowedOrigins = [
