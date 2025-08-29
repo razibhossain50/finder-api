@@ -9,27 +9,20 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "build": "nest build",
-    "start": "npm run migration:run && npm run seed && nest start",
     "dev": "nest start --watch",
-    "start:debug": "nest start --debug --watch",
+    "build": "nest build",
+    "start": "npm run database:migration-seed && nest start",
     "start:prod": "node dist/main",
+    "start:debug": "nest start --debug --watch",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "typeorm": "typeorm --dataSource src/data-source.ts",
-    "migration:generate": "typeorm migration:generate -d src/data-source.ts",
-    "migration:create": "typeorm migration:create",
-    "migration:run": "ts-node src/migration-runner.ts",
-    "migration:revert": "typeorm migration:revert -d src/data-source.ts",
-    "migration:show": "typeorm migration:show -d src/data-source.ts",
-    "seed": "ts-node src/seed-data.ts",
-    "db:setup": "npm run migration:run && npm run seed",
-    "setup": "node setup-database.js",
-    "db:check": "node check-schema.js"
+    "database:migration": "ts-node src/database-migration.ts",
+    "database:seed": "ts-node src/database-seed.ts",
+    "database:migration-seed": "ts-node src/database-migration.ts && ts-node src/database-seed.ts"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",

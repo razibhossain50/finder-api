@@ -45,6 +45,6 @@ async function bootstrap() {
   // Use Railway's dynamic port and listen on all interfaces
   const port = process.env.PORT || 2000;
   await app.listen(port, '0.0.0.0');
-  console.log(`Application is running on: ${await app.getUrl()}`);
+  console.log(`Application is running on: ${await app.getUrl()}/api`);
 }
-bootstrap();
+void bootstrap();

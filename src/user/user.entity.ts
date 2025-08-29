@@ -11,13 +11,8 @@ export class User {
   @Column({ unique: true })
   email: string;
 
-
-
   @Column({ nullable: true })
   password: string;
-
-  @Column({ nullable: true })
-  mobile: string;
 
   @Column({ nullable: true })
   googleId: string;
