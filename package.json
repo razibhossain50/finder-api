@@ -25,6 +25,7 @@
     "database:migration-seed": "ts-node src/database-migration.ts && ts-node src/database-seed.ts"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.878.0",
     "@nestjs/common": "^11.0.1",
     "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.0.1",
